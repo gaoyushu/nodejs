@@ -1,0 +1,9 @@
+-----三种占位符-----
+name: Alex
+age: 17
+user: {"name":"Alex","age":17}
+-----四种输出方式-----
+name: Alex
+user:  Alex 17
+name: Alex
+name: ${user.name}
