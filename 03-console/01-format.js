@@ -11,7 +11,7 @@ const log = console.log;
 // %s 字符串类型
 // %d 整数类型
 // %j 对象类型
-log('-----三种占位符-----')
+log('-----三种占位符-----');
 log('name: %s', user.name);
 log('age: %d', user.age);
 log('user: %j', user);

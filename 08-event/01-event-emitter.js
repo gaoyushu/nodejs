@@ -17,13 +17,13 @@ setInterval(function(){
 
 setTimeout(function(){
   e.emit('bye');
-}, 5000)
+}, 5000);
 
 // 3.绑定事件函数
 // 事件发生的内容
 e.on('hello', function(){
   console.log('hello event');
-})
+});
 
 e.on('bye', function(){
   console.log('goodbye');

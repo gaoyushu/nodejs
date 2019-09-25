@@ -26,4 +26,4 @@ function Dog(name, energy){
 }
 
 Dog.prototype = EventEmitter.prototype;
-module.exports = Dog
+module.exports = Dog;

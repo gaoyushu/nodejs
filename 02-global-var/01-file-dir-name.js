@@ -26,6 +26,6 @@ console.log('file name for windows: ', wfile);
 }*/
 
 // 2.调用path模块
-const path = require('path');
-file = path.join(__dirname, 'views', 'view.html');
+const path = require('path'),
+      file = path.join(__dirname, 'views', 'view.html');
 console.log('path join file name: ', file);

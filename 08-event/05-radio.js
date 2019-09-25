@@ -3,9 +3,9 @@
 function Radio(station) {
   var _listeners = {};
   // 里面放的数据是键值对 举例如下
-    //'play': [fn1, fn2, fn3],
-    //'stop': []
- // }
+  //'play': [fn1, fn2, fn3],
+  //'stop': []
+  // }
 
   setTimeout(() => {
     emit('open', station);
@@ -31,9 +31,9 @@ function Radio(station) {
       _listeners[evt] = [];
     }
 
-  _listeners[evt].push(fn);
+    _listeners[evt].push(fn);
   
-  }
+  };
 
 }
 

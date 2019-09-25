@@ -2,7 +2,7 @@
 
 const  http = require('http'),
       log  = console.log,
-            fs   = require('fs');
+      fs   = require('fs');
 
 http.createServer((req, res) => {
   log('==========');
@@ -10,16 +10,16 @@ http.createServer((req, res) => {
 
   var file = __dirname + req.url;
   fs.readFile(file, (err, data) => {
-  if(err) {
-    log(err.message);
-    res.statusCode = 404;
-    res.end(err.message);
+    if(err) {
+      log(err.message);
+      res.statusCode = 404;
+      res.end(err.message);
                                   
-   } else {
+    } else {
       res.end(data);
-   }
+    }
             
- });
+  });
 
 }).listen(8080);
 

@@ -3,22 +3,22 @@
 const EventEmitter = require('events').EventEmitter;
 
 function Radio(station) {
-    var that = this;
+  var that = this;
       
-    for(var m in EventEmitter.prototype) {
-          this[m] = EventEmitter.prototype[m];
+  for(var m in EventEmitter.prototype) {
+    this[m] = EventEmitter.prototype[m];
             
-    }
+  }
 
-    setTimeout(() => {
-          that.emit('play', station);
+  setTimeout(() => {
+    that.emit('play', station);
             
-    }, 0);
+  }, 0);
 
-    setTimeout(() => {
-          that.emit('stop', station);
+  setTimeout(() => {
+    that.emit('stop', station);
             
-    }, 5000);
+  }, 5000);
 
 }
 

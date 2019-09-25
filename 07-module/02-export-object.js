@@ -14,7 +14,7 @@ var circle = {
   'circumference': function(radius){
     return Math.PI * 2 * radius;
   }
-}
+};
 
 console.dir(module);
 module.exports = circle;

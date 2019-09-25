@@ -1,17 +1,14 @@
 #!/usr/bin/node
 
 const fs = require('fs'),
-      log = console.log;
+      log = console.log,
+      http = require('http');
 
-var data = fs.readFileSync('./qr-code.jpg').toString('base64');
-var html =
-  '<!DOCTYPE html>
-    <html>
-      <body>
-        <img src=''data:image/jpg;base64,'+ data'>
-      </body>
-    </html>'
-
+var data = fs.readFileSync('qr-code.jpg').toString('base64');
+var html = 
+  '<!DOCTYPE html><html><body><img src="data:image/jpg;base64,'
+  + data + 
+  '"></body></html>';
 
 // 打印图片base64
 // log(data);
