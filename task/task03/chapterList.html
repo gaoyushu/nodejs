@@ -11,7 +11,7 @@
     <h2 class="title_tj">
     <p>文章<span>推荐</span></p>
   </h2>
-	<div class="newblog left">
+	<div class="newblog left" id="list">
         <!--左left开始-->
         <div class="oneblog">
             <h2><a title="路·过-喜欢在路上" href="/">路·过-喜欢在路上</a></h2>
@@ -77,7 +77,6 @@
                 <div class="line"></div>
             </p>
         </div>
-        
           <!--分页开始-->
         <div class="page">
               
@@ -92,9 +91,22 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
-    var readmore = document.getElementsByClassName('readmore');
+
+    // 文章列表
+    // $(document).ready(function(){
+    //     $.get("http://localhost:8083/data", (data)=>{
+    //         let dataObj = JSON.parse(data);
+    //         for(let i=0;i<dataObj.length;i++){
+                
+    //         }
+    //     })
+    // })
+
+
+    // 阅读全文
+    let readmore = document.getElementsByClassName('readmore');
     
-    for(var i = 0; i < readmore.length; i++){
+    for(let i = 0; i < readmore.length; i++){
         (function(i){
             readmore[i].onclick = function(){
                 window.location = "http://localhost:8083/detail?chapterId=" + (i+1);
