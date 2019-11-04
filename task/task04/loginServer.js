@@ -65,7 +65,7 @@ function getfun(req, res){
 // postfun
 // 验证密码 记录cookie
 function postfun(req, res){
-    let count = 0;
+    let logincount = 1;
     var user = '';
 
     req.on('data',(data)=>{
@@ -78,15 +78,15 @@ function postfun(req, res){
         usr.map((item)=>{
             if(item.name == user.username && item.pswd == user.pwd){
                 if(typeof req.headers['cookie'] === 'undefined') {
-                    count = 1;
+                    logincount = 1;
                 } else {
                     var pair = req.headers['cookie'].split('=');
-                    count = Number(pair[1]) + 1;
+                    logincount = Number(pair[1]) + 1;
                 }
               
-                res.setHeader('Set-cookie', `count=${count}; max-age=10000000`);
+                res.setHeader('Set-cookie', `logincount=${logincount}; max-age=10000000`);
                 res.statusCode = 200;
-                res.end(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>登录成功</title></head><body><h1>${item.name}这是您第 ${count} 次访问本网站！</h1></body></html>`);
+                res.end(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>登录成功</title></head><body><h1>${item.name}这是您第 ${logincount} 次访问本网站！</h1></body></html>`);
             }
         });
 
